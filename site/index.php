@@ -14,26 +14,26 @@
             include 'structure/header.php';
             
             if (isset($_GET["import"])){
-                include 'pages/import.php';
+                include 'import/import.php';
             }
             else{
-                include 'pages/select.php';
+                include 'lists/select.php';
                 echo '<br>';
 
                 //Page handler
                 if(isset($_POST["lists"]) && $_POST["lists"] != 0){
-                    include 'pages/action.php';
+                    include 'lists/action.php';
                     if(isset($_POST["actions"]) && $_POST["actions"] == 1){
-                        include 'pages/view.php';
+                        include 'lists/view.php';
                     }
                     else if(isset($_POST["actions"]) && $_POST["actions"] == 2){
-                        include 'pages/tag.php';
+                        include 'lists/tag.php';
                     }
                     else if(isset($_POST["actions"]) && $_POST["actions"] == 3){
-                        include 'pages/edit.php';
+                        include 'lists/edit.php';
                     }
                     else if(isset($_POST["actions"]) && $_POST["actions"] == 4){
-                        //include 'pages/edit.php';
+                        include 'lists/edit.php';
                     }
 
                 }
