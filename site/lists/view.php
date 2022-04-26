@@ -16,13 +16,9 @@
 
     $words = $mysqli->store_result(); 
     
-    //var_dump($words);
-    //var_dump($currentWord);
-
-    //$row = $words->fetch_row();
-    //$currentWord = $row[0] ?? false;
     $currentWord = 0;
-
+    
+    //TODO: Edit words tags
     foreach ($words as $word) {
         if ($currentWord != $word['wordid']){
             echo '<br><b>' . $word['wordname'] . '</b><br>';
