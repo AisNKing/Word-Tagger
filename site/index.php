@@ -16,6 +16,9 @@
             if (isset($_GET["import"])){
                 include 'import/import.php';
             }
+            if (isset($_GET["picker"])){
+                include 'picker/picker.php';
+            }
             else{
                 include 'lists/select.php';
                 echo '<br>';
