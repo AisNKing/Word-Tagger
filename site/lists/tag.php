@@ -38,7 +38,6 @@
 
     $words = $mysqli->store_result(); 
     
-    
     foreach ($words as $word) {
         echo '<br><b><u>' . $word['name'] . '</u></b><br><br>';
     }
@@ -59,7 +58,5 @@
 
     else{
         echo 'End of list';
-    
     }
-    
 ?>

@@ -2,7 +2,6 @@
 <form class="form-horizontal" action="index.php?manageTags" method="post" enctype="multipart/form-data">
     
     <?php
-        
         $selectedList = $_POST["lists"]; 
         $selectedAction = $_POST["actions"];
 
@@ -29,10 +28,8 @@
 
 <?php
 
-
     $selectedList = $_POST["lists"]; 
     $selectedAction = $_POST["actions"]; 
-
 
     //Add tag
     if(isset($_POST["submit"])){
@@ -43,7 +40,6 @@
             "INSERT INTO tag (name, list, active)
             VALUES ('$tagname', $selectedList, 1)");
     }
-
 
     $mysqli->real_query(
         "SELECT t.id, t.name
@@ -60,5 +56,4 @@
         echo $tag['name'] . '<br>';
         //. '<a href="removeTag(' . $tag['id'] . ')"> (remove)</a><br>';
     }
-    
 ?>

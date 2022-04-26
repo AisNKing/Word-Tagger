@@ -6,10 +6,8 @@
         <title>Word Tagger</title>
     </head>
 
-
     <body>
         <?php
-            
             //Show page
             include 'structure/header.php';
             

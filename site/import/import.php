@@ -39,7 +39,6 @@ if(isset($_POST["Import"])){
         "INSERT INTO wordlist (name, active)
         VALUES ('$listname', 1)");
 
-
     $mysqli->real_query(
         "SELECT id
         FROM wordlist 
@@ -55,28 +54,16 @@ if(isset($_POST["Import"])){
     }
     $newID = $record["id"];
 
-
-
     $row = 1;
     if (($handle = fopen($filename, "r")) !== FALSE) {
         while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
             $num = count($data);
             $row++;
-            //echo implode($data,"") . '<br>';
             $wordname = implode($data,"");
-            //$theword = print_r($data, 1);
-            //echo $theword . '<br>';
             
             $mysqli->real_query(
                 "INSERT INTO word (name, list, active)
                 VALUES ('$wordname', $newID, 1)");
-            
-            /*
-            for ($c=0; $c < $num; $c++) {
-                echo $data[$c] . '<br />\n';
-            }
-            */
-            
         }
         fclose($handle);
     }

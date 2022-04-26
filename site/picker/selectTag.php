@@ -10,7 +10,6 @@
                 WHERE list = $list1
                 ORDER BY t.id ASC");
 
-                
             $taglist1 = $mysqli->store_result();
 
             //Tag 1
@@ -19,7 +18,7 @@
             <input type="hidden" id="list2" name="list2" value="' . $list2 . '">
             <label for="tags1">Select tag 1:</label>
             <select name="tags1" id="tags1">
-            <option value="0" default>Select</option>';
+            <option value="0" default>All</option>';
 
             foreach ($taglist1 as $tagL1) {
                 if(isset($_POST["tags1"]) && $_POST["tags1"] == $tagL1['id']){ 
@@ -31,13 +30,11 @@
             }
             echo '</select>';
 
-
             $mysqli->real_query(
                 "SELECT t.id, t.name
                 FROM tag t
                 WHERE list = $list2
                 ORDER BY t.id ASC");
-
                 
             $taglist2 = $mysqli->store_result();
             
@@ -45,7 +42,7 @@
             echo '
             <label for="tags2">Select tag 2:</label>
             <select name="tags2" id="tags2">
-            <option value="0" default>Select</option>';
+            <option value="0" default>All</option>';
 
             foreach ($taglist2 as $tagL2) {
                 if(isset($_POST["tags2"]) && $_POST["tags2"] == $tagL2['id']){ 
@@ -55,21 +52,15 @@
                     echo '<option value="' . $tagL2['id'] . '">' . $tagL2['name'] . '</option>';
                 }
             }
-            echo '</select><br>
-            
+            echo '</select><br><br>
             <div class="form-group">
                 <div class="col-md-4">
                     <button type="submit" id="generate" name="generate">Generate</button>
                 </div>
             </div>';
         }
-
-?>
-
-    <!-- Generate -->
-
+    ?>
 </form>
-
 
 <?php 
 
@@ -93,7 +84,6 @@
                 ORDER BY w.id ASC");
 
             $words1 = $mysqli->store_result();
-        
         }
         else{
             $mysqli->real_query(
@@ -125,7 +115,6 @@
                 ORDER BY w.id ASC");
 
             $words2 = $mysqli->store_result();
-
         }
         else{
             $mysqli->real_query(
@@ -136,7 +125,6 @@
                 ORDER BY w.id ASC");
 
             $words2 = $mysqli->store_result();
-
         }
 
         $listSelect2 = array();

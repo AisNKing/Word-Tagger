@@ -6,7 +6,6 @@
             mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
             $mysqli = new mysqli("localhost:3306", "root", "", "word_tagger");
 
-
             $mysqli->real_query(
                 "SELECT * 
                 FROM wordlist 

@@ -11,11 +11,10 @@
 
         $wordlist = $mysqli->store_result();
 
-
         //List 1
         echo '
         <label for="list1">Select list 1:</label>
-        <select name="list1" id="list1">
+        <select name="list1" id="list1" onchange="this.form.submit()">
         <option value="0" default>Select</option>';
 
         foreach ($wordlist as $row) {
@@ -28,11 +27,10 @@
         }
         echo '</select>';
 
-
         //List 2
         echo '
         <label for="list2">Select list 2:</label>
-        <select name="list2" id="list2">
+        <select name="list2" id="list2" onchange="this.form.submit()">
         <option value="0" default>Select</option>';
 
         foreach ($wordlist as $row) {
@@ -43,46 +41,8 @@
                 echo '<option value="' . $row['id'] . '">' . $row['name'] . '</option>';
             }
         }
-        echo '</select>';
-             
+        echo '</select><br><br>';
+            
+        include 'selectTag.php'; 
     ?>
-    
-    <br>
-    <!-- Submit -->
-    <div class="form-group">
-        <div class="col-md-4">
-            <button type="submit" id="submit" name="submit">Submit</button>
-        </div>
-    </div>
-
-</form>
-
-
-<?php
-    include 'selectTag.php';
-    if(isset($_POST["submit"])){
-        //include 'selectTag.php';
-        /*
-        $list1 = $_POST["list1"];
-        $list1 = $_POST["list2"];
-
-        $mysqli->real_query(
-            "SELECT w.id, w.name 
-            FROM word w
-            WHERE w.list = $selectedList
-            INNER JOIN wordtag wt
-            AND w.active = 1
-            ON w.id = wt.word
-                AND wt.list = $list1
-            ORDER BY w.id ASC");
-
-        $words1 = $mysqli->store_result(); 
-        
-        
-        foreach ($words as $word) {
-            echo '<br><b><u>' . $word['name'] . '</u></b><br><br>';
-        }
-        */
-    }
-
-?>    
+</form> 
