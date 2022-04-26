@@ -14,7 +14,7 @@
             if (isset($_GET["import"])){
                 include 'import/import.php';
             }
-            if (isset($_GET["picker"])){
+            else if (isset($_GET["picker"])){
                 include 'picker/picker.php';
             }
             else{

@@ -57,7 +57,8 @@
                 <div class="col-md-4">
                     <button type="submit" id="generate" name="generate">Generate</button>
                 </div>
-            </div>';
+            </div>
+            <br>';
         }
     ?>
 </form>

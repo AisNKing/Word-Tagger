@@ -43,6 +43,9 @@
         }
         echo '</select><br><br>';
             
-        include 'selectTag.php'; 
     ?>
 </form> 
+
+<?php
+    include 'selectTag.php'; 
+?>
