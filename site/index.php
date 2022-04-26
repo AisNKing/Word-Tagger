@@ -33,7 +33,7 @@
                         include 'lists/edit.php';
                     }
                     else if(isset($_POST["actions"]) && $_POST["actions"] == 4){
-                        include 'lists/edit.php';
+                        include 'lists/manageTags.php';
                     }
 
                 }

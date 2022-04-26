@@ -9,7 +9,7 @@
 
     <!-- Name list -->
     <div class="form-group">
-        <label class="col-md-4 control-label" for="filebutton">Name of list</label>
+        <label class="col-md-4 control-label" for="listname">Name of list</label>
         <div class="col-md-4">
             <input type="text" name="listname" id="listname" class="input-large">
         </div>
@@ -17,9 +17,9 @@
 
     <!-- Submit -->
     <div class="form-group">
-        <label class="col-md-4 control-label" for="singlebutton">Import data</label>
+        <label class="col-md-4 control-label" for="submit">Import data</label>
         <div class="col-md-4">
-            <button type="submit" id="submit" name="Import" class="btn btn-primary button-loading" data-loading-text="Loading...">Import</button>
+            <button type="submit" id="submit" name="Import">Import</button>
         </div>
     </div>
 </form>
@@ -44,11 +44,12 @@ if(isset($_POST["Import"])){
         "SELECT id
         FROM wordlist 
         WHERE active = 1
-        ORDER BY id ASC");
+        ORDER BY id DESC
+        LIMIT 1");
 
     $records = $mysqli->store_result(); 
 
-    
+    //need to keep this to initialise $record lazily
     foreach ($records as $record) {
         //echo '<b>' . $word['name'] . '</b><br><br>';
     }

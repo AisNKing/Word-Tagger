@@ -40,7 +40,7 @@
     
     
     foreach ($words as $word) {
-        echo '<b>' . $word['name'] . '</b><br><br>';
+        echo '<br><b><u>' . $word['name'] . '</u></b><br><br>';
     }
     if(isset($word)){
         echo '<form action="index.php" method="post">
@@ -48,8 +48,8 @@
             <input type="hidden" id="selectedWord" name="selectedWord" value="' . $word['id'] . '">
             <input type="hidden" id="actions" name="actions" value="' . $selectedAction . '">';
         foreach ($tags as $tag) {
-            echo $tag['name'] . 
-                '<input type="checkbox" id="' . $tag['id'] . '" name="' . $tag['id'] . '">';
+            echo '<input type="checkbox" id="' . $tag['id'] . '" name="' . $tag['id'] . '">' . 
+                $tag['name'] . '<br>';
         }
 
         echo '<br><br>
