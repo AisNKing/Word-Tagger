@@ -32,7 +32,7 @@
         FROM word w
         WHERE w.list = $selectedList
         AND w.active = 1
-        AND w.id NOT IN (SELECT wt.word FROM wordtag wt)
+        AND w.id NOT IN (SELECT wt.word FROM wordtag wt WHERE wt.active = 1)
         ORDER BY w.id ASC
         LIMIT 1");
 

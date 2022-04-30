@@ -36,7 +36,6 @@
                     else if(isset($_POST["actions"]) && $_POST["actions"] == 4){
                         include 'lists/manageTags.php';
                     }
-
                 }
             }
 
