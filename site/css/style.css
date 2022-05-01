@@ -1,0 +1,38 @@
+.headertable {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.selecttable {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+}
+
+.headerheader {
+    border: 0px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+.selectheader {
+    border: 0px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.content {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.headerheader:nth-child(odd) {
+    background-color: #dddddd;
+}
+.headerheader:nth-child(even) {
+    background-color: #cccccc;
+}

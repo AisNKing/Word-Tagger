@@ -33,9 +33,9 @@
     //TODO: Clear tags
     foreach ($words as $word) {
         if ($currentWord != $word['wordid']){
-            echo '<form action="index.php" method="post">
-                <br><b>' . $word['wordname'] . '</b> 
-            
+            echo '<br><br>
+            <form action="index.php" method="post">
+                <b>' . $word['wordname'] . '</b> 
                 <input type="hidden" id="lists" name="lists" value="' . $selectedList . '">
                 <input type="hidden" id="actions" name="actions" value="' . $selectedAction . '">
                 <input type="hidden" id="clear" name="clear" value="' . $word['wordid'] . '">

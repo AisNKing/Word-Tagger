@@ -4,13 +4,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Word Tagger</title>
+        <link rel="stylesheet" href="css/style.css">
     </head>
 
     <body>
         <?php
             //Show page
             include 'structure/header.php';
-            
+            echo '<div class="content">';
             if (isset($_GET["import"])){
                 include 'import/import.php';
             }
@@ -38,7 +39,7 @@
                     }
                 }
             }
-
+            echo '</div>';
             include 'structure/footer.php';
         ?>
     </body>
