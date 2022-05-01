@@ -82,6 +82,7 @@
                 INNER JOIN wordtag wt
                 ON wt.word = w.id
                 AND wt.tag = $tag1
+                AND wt.active = 1
                 WHERE w.list = $list1
                 AND w.active = 1
                 ORDER BY w.id ASC");
@@ -113,6 +114,7 @@
                 INNER JOIN wordtag wt
                 ON wt.word = w.id
                 AND wt.tag = $tag2
+                AND wt.active = 1
                 WHERE w.list = $list2
                 AND w.active = 1
                 ORDER BY w.id ASC");
