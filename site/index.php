@@ -32,7 +32,7 @@
                         include 'lists/tag.php';
                     }
                     else if(isset($_POST["actions"]) && $_POST["actions"] == 3){
-                        include 'lists/edit.php';
+                        include 'lists/remove.php';
                     }
                     else if(isset($_POST["actions"]) && $_POST["actions"] == 4){
                         include 'lists/manageTags.php';

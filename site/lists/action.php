@@ -24,19 +24,17 @@
                         else{
                             echo '<option value="2" >Tag</option>';
                         }
-                        /*
-                        if($selectedAction == 3){
-                            echo '<option value="3" selected>Edit</option>';
-                        }
-                        else{
-                            echo '<option value="3" >Edit</option>';
-                        }
-                        */
                         if($selectedAction == 4){
                             echo '<option value="4" selected>Manage Tags</option>';
                         }
                         else{
                             echo '<option value="4" >Manage Tags</option>';
+                        }
+                        if($selectedAction == 3){
+                            echo '<option value="3" selected>Remove</option>';
+                        }
+                        else{
+                            echo '<option value="3" >Remove</option>';
                         }
                         echo '</select>
                             <input type="hidden" id="lists" name="lists" value="' . $selectedList . '">';

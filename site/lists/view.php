@@ -22,7 +22,7 @@
         AND wt.active = 1
         LEFT JOIN tag t 
         ON t.id = wt.tag
-        ON t.active = 1
+        AND t.active = 1
         WHERE w.list = $selectedList
         AND w.active = 1
         ORDER BY w.id ASC");

@@ -33,7 +33,6 @@ if(isset($_POST["Import"])){
     $filename = $_FILES["file"]["tmp_name"]; 
     $listname = $_POST["listname"];
 
-    echo $listname;
     //Create empty list
     $mysqli->real_query(
         "INSERT INTO wordlist (name, active)
@@ -67,5 +66,7 @@ if(isset($_POST["Import"])){
         }
         fclose($handle);
     }
+    
+    echo 'Import of ' . $listname . ' complete';
 }
 ?>
