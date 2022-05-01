@@ -8,6 +8,7 @@
                 "SELECT t.id, t.name
                 FROM tag t
                 WHERE list = $list1
+                AND t.active = 1
                 ORDER BY t.id ASC");
 
             $taglist1 = $mysqli->store_result();
@@ -34,6 +35,7 @@
                 "SELECT t.id, t.name
                 FROM tag t
                 WHERE list = $list2
+                AND t.active = 1
                 ORDER BY t.id ASC");
                 
             $taglist2 = $mysqli->store_result();

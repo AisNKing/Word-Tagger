@@ -31,6 +31,16 @@
     $selectedList = $_POST["lists"]; 
     $selectedAction = $_POST["actions"]; 
 
+    
+    if(isset($_POST["clear"])){
+        $tagToClear = $_POST["clear"];
+
+        $mysqli->real_query("
+            UPDATE tag
+            SET active = 0
+            WHERE id = $tagToClear");
+    }
+
     //Add tag
     if(isset($_POST["submit"])){
 
@@ -51,9 +61,14 @@
     $tags = $mysqli->store_result(); 
 
     //show current tags with remove button
-    //TODO: remove functionality
     foreach ($tags as $tag) {
-        echo $tag['name'] . '<br>';
-        //. '<a href="removeTag(' . $tag['id'] . ')"> (remove)</a><br>';
+        echo '
+        <form action="index.php" method="post">
+            <b>' . $tag['name'] . '</b> 
+            <input type="hidden" id="lists" name="lists" value="' . $selectedList . '">
+            <input type="hidden" id="actions" name="actions" value="' . $selectedAction . '">
+            <input type="hidden" id="clear" name="clear" value="' . $tag['id'] . '">
+            <button type="submit" id="submit" name="clearbutton">Remove</button>
+        </form>';
     }
 ?>
