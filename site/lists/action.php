@@ -31,10 +31,10 @@
                             echo '<option value="4" >Manage Tags</option>';
                         }
                         if($selectedAction == 3){
-                            echo '<option value="3" selected>Remove</option>';
+                            echo '<option value="3" selected>Remove List</option>';
                         }
                         else{
-                            echo '<option value="3" >Remove</option>';
+                            echo '<option value="3" >Remove List</option>';
                         }
                         echo '</select>
                             <input type="hidden" id="lists" name="lists" value="' . $selectedList . '">';

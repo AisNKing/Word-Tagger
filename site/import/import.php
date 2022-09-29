@@ -6,7 +6,7 @@
             <input type="file" name="file" id="file" class="input-large">
         </div>
     </div>
-
+    <br>
     <!-- Name list -->
     <div class="form-group">
         <label class="col-md-4 control-label" for="listname">Name of list</label>
@@ -14,10 +14,9 @@
             <input type="text" name="listname" id="listname" class="input-large">
         </div>
     </div>
-
+    <br>
     <!-- Submit -->
     <div class="form-group">
-        <label class="col-md-4 control-label" for="submit">Import data</label>
         <div class="col-md-4">
             <button type="submit" id="submit" name="Import">Import</button>
         </div>
@@ -48,6 +47,7 @@ if(isset($_POST["Import"])){
     $records = $mysqli->store_result(); 
 
     //need to keep this to initialise $record lazily
+    //TODO: try $record = $records[0];
     foreach ($records as $record) {
         //echo '<b>' . $word['name'] . '</b><br><br>';
     }
